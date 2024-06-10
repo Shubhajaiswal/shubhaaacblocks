@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shubha Infrastructures</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        // JavaScript to handle smooth scrolling
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the 'About' and 'Contact' links
+            const aboutLink = document.querySelector('a[href="#hero"]');
+            const contactLink = document.querySelector('a[href="#contact"]');
+
+            // Smooth scrolling function
+            function scrollToElement(element) {
+                window.scrollTo({
+                    behavior: 'smooth',
+                    top: element.offsetTop - 50 // Adjust the offset if needed
+                });
+            }
+
+            // Scroll to 'hero' section when 'About' link is clicked
+            aboutLink.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default link behavior
+                const heroSection = document.querySelector('#hero');
+                scrollToElement(heroSection);
+            });
+
+            // Scroll to 'contact' section when 'Contact' link is clicked
+            contactLink.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default link behavior
+                const contactSection = document.querySelector('#contact');
+                scrollToElement(contactSection);
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="AAC Blocks Production" class="logo-image">
+        </div>
+        <div class="navigation">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#hero">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+    <main>
+        <section id="hero" class="hero">
+            <img src="banner1.png" alt="AAC Blocks Production" class="hero-image">
+            <div class="hero-text">
+                <h2>AAC Blocks</h2>
+                <h3>PREMIUM QUALITY AAC BLOCKS FOR YOUR CONSTRUCTION NEEDS IN BAREILLY</h3>
+                
+                <p>Autoclaved Aerated Concrete (AAC) blocks are lightweight and durable building products. First conceptualized and invented by Swedish arch
+                    itect and inventor Johan Axel Eriksson in 1924, AAC blocks are particularly known for their fire, heat, and sound-resistant properties. Air being 
+                    the major constituent (almost 80-85% by volume), these building products are typically lightweight, weighing only a third of the more common 
+                    red clay bricks.</p>
+                <h3>Why Choose Us?</h3>
+                <sl>
+                    <li>Trusted by Builders & Contractors</li>
+                    <li>Unmatched Strength & Insulation</li>
+                    <li>Cost-Effective & Efficient</li>
+                </sl>
+            </div>
+            <div class="features">
+                <h3>Bricks of the Future</h3>
+                <sl>
+                    <li>High thermal insulation</li>
+                    <li>Lightweight</li>
+                    <li>Pest resistant</li>
+                    <li>Fire resistant</li>
+                    <li>High sound insulation</li>
+                </sl>
+            </div>
+        </section>
+        <section id="contact" class="contact">
+            <h3>Contact Us</h3>
+            <p>Leave us a message and we'll get back to you</p>
+            <form action="/submit-form" method="POST">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="tel" name="phone" placeholder="Phone No." required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-info">
+            <div class="address">
+                <h4>Address</h4>
+                <p>Delhi Road,<br> opp. of Goverment Technical Institute,<br> C.B.Ganj,<br>Bareilly, UP<br>243502</p>
+            </div>
+            <div class="contact-details">
+                <h4>Contact</h4>
+                <p>+91-9897434800<br>+91-9412192107<br>shubhaaacblock@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById("contact-form");
+            const formStatus = document.getElementById("form-status");
+
+            form.addEventListener("submit", async function(event) {
+                event.preventDefault(); // Prevent the default form submission behavior
+
+                const formData = new FormData(form); // Create a FormData object from the form
+                try {
+                    const response = await fetch('/submit-form', { // Send a POST request to the server
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    if (response.ok) {
+                        formStatus.textContent = "Form submitted successfully!";
+                        form.reset(); // Reset the form fields
+                    } else {
+                        formStatus.textContent = "Error submitting form. Please try again later.";
+                    }
+                } catch (error) {
+                    console.error('Error submitting form:', error);
+                    formStatus.textContent = "Error submitting form. Please try again later.";
+                }
+            });
+        });
+    </script> -->
+</body>
+</html>
